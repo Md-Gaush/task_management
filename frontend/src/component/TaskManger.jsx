@@ -46,7 +46,7 @@ const TaskManger = () => {
             isDone : false
         }
         try {
-            const response = await axios.post('http://localhost:8000/task', obj );
+            const response = await axios.post('https://task-management-api-khaki.vercel.app/task', obj );
             // console.log('User created:', response.data);
             const {success,message} = response.data
             if(success){
@@ -65,7 +65,7 @@ const TaskManger = () => {
     const getAll = async()=>{
       
       try {
-        const response = await axios.get('http://localhost:8000/task');
+        const response = await axios.get('https://task-management-api-khaki.vercel.app/task');
             const data = response.data.data
             console.log("data",data)
             setTask(data);
@@ -84,7 +84,7 @@ const TaskManger = () => {
    const handleDeleteTAsk = async(id)=>{
        
     try {
-          const res = await axios.delete(`http://localhost:8000/task/${id}`);
+          const res = await axios.delete(`https://task-management-api-khaki.vercel.app/task/${id}`);
           const { success, message } = res.data;
   
            if (success) {
@@ -107,7 +107,7 @@ const TaskManger = () => {
         isDone:!isDone
        }
       try {
-            const res = await axios.put(`http://localhost:8000/task/${_id}`,obj);
+            const res = await axios.put(`https://task-management-api-khaki.vercel.app/task/${_id}`,obj);
             const { success, message } = res.data;
     
              if (success) {
@@ -130,7 +130,7 @@ const TaskManger = () => {
            isDone:isDone
           }
          try {
-               const res = await axios.put(`http://localhost:8000/task/${_id}`,obj);
+               const res = await axios.put(`https://task-management-api-khaki.vercel.app/task/${_id}`,obj);
                const { success, message } = res.data;
        
                 if (success) {
